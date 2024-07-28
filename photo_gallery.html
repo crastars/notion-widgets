@@ -9,8 +9,8 @@
 
   <style>
     body {
-      background-color: #fff;
-      color: #000;
+      background-color: #121212;
+      color: #e0e0e0;
     }
 
     body.dark-mode {
@@ -18,26 +18,26 @@
       color: #e0e0e0;
     }
 
-    .dark-mode .thumbnail {
+    .thumbnail {
       background-color: #1e1e1e;
       box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
     }
 
-    .dark-mode .thumbnail:hover {
+    .thumbnail:hover {
       transform: translateY(-10px) scale(1.02);
     }
 
-    .dark-mode .carousel-inner>.item>a>img,
-    .dark-mode .carousel-inner>.item>img,
-    .dark-mode .img-responsive,
-    .dark-mode .thumbnail a>img,
-    .dark-mode .thumbnail>img {
+    .carousel-inner>.item>a>img,
+    .carousel-inner>.item>img,
+    .img-responsive,
+    .thumbnail a>img,
+    .thumbnail>img {
       display: block;
       max-width: 100%;
       height: auto;
     }
 
-    .dark-mode .baguetteBox-button {
+    .baguetteBox-button {
       background-color: transparent !important;
     }
 
@@ -77,8 +77,9 @@
   </style>
 </head>
 
-<body>
-  <i class="fas fa-moon toggle-icon light-mode" id="toggleIcon" onclick="toggleDarkMode()"></i>
+<body class="dark-mode"> <!-- Added dark-mode class by default -->
+
+  <i class="fas fa-sun toggle-icon dark-mode" id="toggleIcon" onclick="toggleDarkMode()"></i>
 
   <main>
     <section id="gallery">
@@ -192,4 +193,3 @@
 </body>
 
 </html>
-
