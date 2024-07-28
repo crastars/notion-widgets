@@ -2,45 +2,12 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link href="./css/thumbnail-gallery.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <style>
-    body {
-      background-color: #121212;
-      color: #e0e0e0;
-    }
-
-    body.dark-mode {
-      background-color: #121212;
-      color: #e0e0e0;
-    }
-
-    .thumbnail {
-      background-color: #1e1e1e;
-      box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
-    }
-
-    .thumbnail:hover {
-      transform: translateY(-10px) scale(1.02);
-    }
-
-    .carousel-inner>.item>a>img,
-    .carousel-inner>.item>img,
-    .img-responsive,
-    .thumbnail a>img,
-    .thumbnail>img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    .baguetteBox-button {
-      background-color: transparent !important;
-    }
-
     .tz-gallery {
       padding: 40px;
     }
@@ -48,6 +15,7 @@
     .tz-gallery .thumbnail {
       padding: 0;
       margin-bottom: 30px;
+      background-color: #fff;
       border-radius: 4px;
       border: none;
       transition: 0.15s ease-in-out;
@@ -58,33 +26,34 @@
       transform: translateY(-10px) scale(1.02);
     }
 
-    .toggle-icon {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 1000;
+    .baguetteBox-button {
+      background-color: transparent !important;
     }
 
-    .toggle-icon.dark-mode {
-      color: #e0e0e0;
-    }
 
-    .toggle-icon.light-mode {
-      color: #000;
+    .carousel-inner>.item>a>img,
+    .carousel-inner>.item>img,
+    .img-responsive,
+    .thumbnail a>img,
+    .thumbnail>img {
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
   </style>
+
 </head>
 
-<body class="dark-mode"> <!-- Added dark-mode class by default -->
+<body>
 
-  <i class="fas fa-sun toggle-icon dark-mode" id="toggleIcon" onclick="toggleDarkMode()"></i>
 
   <main>
+
+
     <section id="gallery">
-      <div class="gallery-container container">
+      <div class=" gallery-container container">
         <div class="tz-gallery">
+
           <div class="row">
 
             <!---------------------------------------------->
@@ -112,6 +81,7 @@
                 <a class="lightbox" href="3.jpg">
                   <img src="3.jpg">
                 </a>
+
               </div>
             </div>
             <!---------------------------------------------->
@@ -168,28 +138,23 @@
                 </a>
               </div>
             </div>
+
+
+
+
           </div>
         </div>
       </div>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
       <script>
-        function toggleDarkMode() {
-          document.body.classList.toggle('dark-mode');
-          const icon = document.getElementById('toggleIcon');
-          if (document.body.classList.contains('dark-mode')) {
-            icon.classList.remove('fa-moon', 'light-mode');
-            icon.classList.add('fa-sun', 'dark-mode');
-          } else {
-            icon.classList.remove('fa-sun', 'dark-mode');
-            icon.classList.add('fa-moon', 'light-mode');
-          }
-        }
         baguetteBox.run('.tz-gallery');
       </script>
 
     </section>
+
+
   </main>
-</body>
+
 
 </html>
